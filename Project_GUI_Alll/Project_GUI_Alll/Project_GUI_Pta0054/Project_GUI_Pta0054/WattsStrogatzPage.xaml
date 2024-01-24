@@ -1,0 +1,57 @@
+﻿<Page x:Class="Project_GUI_Pta0054.WattsStrogatzPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Project_GUI_Pta0054"
+      mc:Ignorable="d"
+      Title="WatssStrogatz" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/> <!-- Left column for inputs -->
+            <ColumnDefinition Width="*"/>    <!-- Right column for text/content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Left column for inputs -->
+        <StackPanel Margin="20" Grid.Column="0">
+            <TextBlock Style="{StaticResource FancyLabelStyle}" HorizontalAlignment="Center">
+                <Run Text="N" FontWeight="Bold"/>
+                <Run Text=" (number of nodes)"/>
+            </TextBlock>
+            <TextBox x:Name="Input1TextBox" Style="{StaticResource FancyTextBoxStyle}"/>
+            <TextBlock Style="{StaticResource FancyLabelStyle}" HorizontalAlignment="Center">
+                <Run Text="K" FontWeight="Bold"/>
+                <Run Text=" (number of neighbours)"/>
+            </TextBlock>
+            <TextBox x:Name="Input2TextBox" Style="{StaticResource FancyTextBoxStyle}" />
+            <TextBlock Style="{StaticResource FancyLabelStyle}" HorizontalAlignment="Center">
+                <Run Text="p" FontWeight="Bold"/>
+                <Run Text=" (probability of rewiring)"/>
+            </TextBlock>
+            <TextBox x:Name="Input3TextBox" Style="{StaticResource FancyTextBoxStyle}"/>
+            <Button Content="Generate" Width="100" Height="30" Click="GenerateGraph_Click" FontWeight="Bold" Style="{StaticResource FancyButtonStyle}"/>
+        </StackPanel>
+
+        <!-- Right column for text/content -->
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Watts-Strogatz model" Style="{StaticResource FancyTitleStyle}" HorizontalAlignment="Center"/>
+            <StackPanel x:Name="progressActualProcedureContainer"/>
+            <StackPanel x:Name="progressBarsContainer"/>
+            
+            <StackPanel x:Name="ExportContainer" IsEnabled="False" Visibility="Hidden">
+                <TextBlock Text="Select export option for gephi." Style="{StaticResource FancyLabelStyle}" HorizontalAlignment="Center"/>
+                <ComboBox Name="myComboBox" FontWeight="Bold" SelectedIndex="0" Width="20">
+                    <ComboBoxItem Content="Edge List"/>
+                    <ComboBoxItem Content="Adjacency List"/>
+                </ComboBox>
+                <Button Content="Export" Click="ExportGraph_Click" FontWeight="Bold" Style="{StaticResource FancyButtonStyle}"/>
+                <TextBlock x:Name="ExportResult" Text="" Foreground="SeaGreen" FontWeight="Bold" Style="{StaticResource FancyLabelStyle}" HorizontalAlignment="Center"/>
+
+            </StackPanel>
+            
+            <!-- Add other content here -->
+        </StackPanel>
+        
+    </Grid>
+</Page>

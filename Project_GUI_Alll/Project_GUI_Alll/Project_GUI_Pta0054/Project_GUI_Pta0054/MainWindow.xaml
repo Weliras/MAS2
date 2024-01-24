@@ -1,0 +1,32 @@
+﻿<Window x:Class="Project_GUI_Pta0054.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_GUI_Pta0054"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="800">
+    <Grid>
+        <!-- Content for MainWindow -->
+        <Grid>
+            <Frame Name="mainFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition /> 
+                    <RowDefinition /> 
+                    <RowDefinition />    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Row="0" Content="Watts-Strogatz model" Width="Auto"  HorizontalAlignment="Stretch" Margin="0,0,0,0" Style="{StaticResource FancyButtonStyle}" Click="NavigateToPage1_Click"/>
+                <Button Grid.Row="1" Content="Barabási-Albert model" Width="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" Style="{StaticResource FancyButtonStyle}" Click="NavigateToPage2_Click"/>
+                <TextBlock Text="Made by Petr Ptáček into MAS2 course." Style="{StaticResource FancyLabelStyle}" HorizontalAlignment="Stretch" TextAlignment="Center" Grid.Row="2"></TextBlock>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
